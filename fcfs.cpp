@@ -1,10 +1,5 @@
-/*
-    So, which of the favours
-    of your Lord would you deny?
-*/
-
+#pragma once
 #include "common.cpp"
-
 namespace fcfs{
     bool visual_output = true;
     bool show_wait_time = true;
@@ -32,7 +27,8 @@ namespace fcfs{
         t++;
         return true;
     }
-    vector<int> simulate(vector<ProcessState> &states)
+    
+    vector<int> simulate(vector<ProcessState> states)
     {
         if(visual_output)
         {
