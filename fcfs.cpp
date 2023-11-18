@@ -30,12 +30,14 @@ namespace fcfs{
         t++;
         return true;
     }
-    void simulate(vector<ProcessState> &states)
+    vector<int> simulate(vector<ProcessState> &states)
     {
         print_top_column(states.size());
+        vector<int> seq;
         int t = 0;
         do
         {
+            seq.push_back(index_of_executing_process(states, t));
             print_current_state(states, t, index_of_executing_process(states, t));
         } while (next_state(states, t));
         print_divider(states.size());
@@ -46,5 +48,6 @@ namespace fcfs{
             WT = (int) WT + states[i].WT;
         }
         cout << "Avg. WT: " << WT/states.size() << "\n";
+        return seq;
     }
 }
