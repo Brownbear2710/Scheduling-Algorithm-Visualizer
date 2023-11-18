@@ -33,3 +33,6 @@
 
 # Tester
 tester.cpp
+
+# Text Editor
+.vscode
