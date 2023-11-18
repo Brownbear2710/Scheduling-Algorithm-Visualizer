@@ -27,15 +27,15 @@ namespace fcfs{
         t++;
         return true;
     }
-    
+
     vector<int> simulate(vector<ProcessState> states)
     {
-        if(visual_output)
+        if(visual_output or show_wait_time)
         {
             setTextColor(RED);
             cout << "- FCFS (First Come First Serve):\n";
             setTextColor(WHITE);
-            print_top_column(states.size());
+            if(visual_output) print_top_column(states.size());
         }
         vector<int> seq;
         int t = 0;

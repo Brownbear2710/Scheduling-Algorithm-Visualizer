@@ -26,15 +26,15 @@ namespace srtf {
         t++;
         return true;
     }
-    vector<int> simulate(vector<ProcessState> states)
+    vector<int> simulate(vector<ProcessState> states, string print_at_top = "- SRTF (Shortest Remaining Time First):")
     {
         vector<int> seq;
-        if(visual_output)
+        if(visual_output or show_wait_time)
         {
             setTextColor(RED);
-            cout << "- SRTF (Shortest Remaining Time First):\n";
+            cout << print_at_top <<"\n";
             setTextColor(WHITE);
-            print_top_column(states.size());
+            if(visual_output)print_top_column(states.size());
         }
         int t = 0;
         do
