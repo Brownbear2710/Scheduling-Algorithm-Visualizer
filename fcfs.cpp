@@ -6,6 +6,8 @@
 #include "common.cpp"
 
 namespace fcfs{
+    bool visual_output = true;
+    bool show_wait_time = true;
     int index_of_executing_process(vector<ProcessState> &states, int t)
     {
         int indx = -1;
@@ -32,22 +34,25 @@ namespace fcfs{
     }
     vector<int> simulate(vector<ProcessState> &states)
     {
-        print_top_column(states.size());
+        if(visual_output) print_top_column(states.size());
         vector<int> seq;
         int t = 0;
         do
         {
             seq.push_back(index_of_executing_process(states, t));
-            print_current_state(states, t, index_of_executing_process(states, t));
+            if(visual_output) print_current_state(states, t, index_of_executing_process(states, t));
         } while (next_state(states, t));
-        print_divider(states.size());
+        if(visual_output) print_divider(states.size());
         double WT = 0;
-        for(int i = 0; i < states.size(); i++)
+        if(show_wait_time)
         {
-            cout << "WT" << i << ": " << states[i].WT << "\n";
-            WT = (int) WT + states[i].WT;
+            for(int i = 0; i < states.size(); i++)
+            {
+                cout << "WT" << i << ": " << states[i].WT << "\n";
+                WT = (int) WT + states[i].WT;
+            }
+            cout << "Avg. WT: " << WT/states.size() << "\n";
         }
-        cout << "Avg. WT: " << WT/states.size() << "\n";
         return seq;
     }
 }
