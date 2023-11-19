@@ -98,26 +98,3 @@ void print_current_state(vector<ProcessState> &states, int t, int indx)
     cout << "\n";
     // print_divider(states.size());
 }
-
-
-vector<ProcessState> take_input()
-{
-    setTextColor(Color::WHITE);
-    cout << "Enter number of Processes: ";
-    int n;
-    cin >> n;
-    vector<ProcessState> states(n);
-    for(int i = 0; i < n; i++)
-    {
-        int in;
-        cout << "AT for process " << i << ": ";
-        cin >> in;
-        states[i].AT = in;
-        cout << "BT for process " << i << ": ";
-        cin >> in;
-        states[i].BT = in;
-        states[i].remaining = in;
-        states[i].WT = 0;
-    }
-    return states;
-}
