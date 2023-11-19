@@ -31,9 +31,9 @@
 *.out
 *.app
 
-# Tester
+#! Tester
 *tester*
 
-# VS Code specific files
+#! VS Code specific files
 .vscode
 tempCodeRunnerFile.cpp
