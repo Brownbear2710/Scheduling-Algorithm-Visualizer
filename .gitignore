@@ -34,5 +34,6 @@
 # Tester
 tester.cpp
 
-# Text Editor
+# VS Code specific files
 .vscode
+tempCodeRunnerFile.cpp
