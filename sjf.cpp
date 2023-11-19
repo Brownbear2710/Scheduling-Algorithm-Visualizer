@@ -4,7 +4,7 @@ namespace sjf
 {
     bool show_wait_time = true;
     bool visual_output = true;
-    vector<int> simulate(vector<ProcessState> &states)
+    vector<int> simulate(vector<ProcessState> states)
     {
         for(int i = 0; i < states.size(); i++)
             states[i].AT = 0;
