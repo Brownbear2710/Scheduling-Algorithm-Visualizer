@@ -30,7 +30,7 @@ void setTextColor(Color color)
 
 
 struct ProcessState {
-    int AT, BT, remaining, WT;
+    int AT, BT, remaining, WT, priority;
 };
 
 void print_divider(int n)
